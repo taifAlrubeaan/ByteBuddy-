@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Administrator</title>
+    <link rel="stylesheet" href="abc.css">
+    <script src="changeTheme.js"></script>
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body onload="onload()">
+    <header>
+        <div class="navbar">
+            <div class="logo"> 
+                <div class="logodiv">
+                    <a href="#" class="logo_img"><img src="images/logo2.png" alt="logo"></a>
+                    <a href="#" class="logo_text">
+                        <h2>ByteBuddy Academy</h2>
+                        <h5>Code, Create, Play, Repeat!</h5>
+                    </a>
+                </div>
+            </div>
+            <ul class="top-nav-bar">
+                <li><a href="courses.html" class="nav-item">Courses</a></li>
+                <li><a href="parents.html" class="nav-item">Parents</a></li>
+                <li><a href="Tutors.html" class="nav-item">Tutors</a></li>
+                <li><a href="Adminstrator.html" class="nav-item">Administrator</a></li>
+            </ul>
+            </ul>
+
+            <form action="#" class="search_fr">
+                <input type="text" placeholder="Search..">
+            </form>   
+        </div>
+    </header>
+    
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator"> > </span>
+        <a href="Adminstrator.html">Administrator</a>
+    </div> 
+    
+    <main>
+    <h1>Administrator Dashboard</h1>
+    <h2 id="current-week-date"></h2>
+    <br>
+        <div class="Admin">
+            <div class="student">
+                <h3 class="Admin"><strong>Student</strong></h3>
+                <ul>
+                    <Li>Ahmed</Li>
+                    <Li>Abdulaziz</Li>
+                    <Li>Ali</Li>
+                    <Li>Amani</Li>
+                    <Li>Eman</Li>
+                    <Li>Omar</Li>
+                    <Li>Naser</Li>
+                    <Li>Nora</Li>
+                    <Li>Huda</Li>
+                    <li>jood</li>
+                    <li>lena</li>
+                    <li>Saleh</li>
+                    <li>Sadeem</li>
+                    <li>Reem</li>
+                    <li>Raghad</li>
+                    <li>Yara</li>
+                    <li>Mohammed</li>
+                </ul>
+            </div>
+    
+            <div class="Courses-Student">
+                <h3 class="Admin"><strong> Courses-Student</strong></h3>
+                <ul>
+                    <li>Python(Alice)
+                        <ul class="text">
+                            <li>Ahmed</li>
+                            <li>Ali</li>
+                            <li>mohammed</li>
+                            <span class="moreText"> <li >sara </li>
+                            <li >Omar</li>
+                            <li >Naser</li></span>
+                        </ul>
+                        <button class="readMoreBtn">More..</button>
+                    </li>
+                    <li>Html (Bob)
+                        <ul class="tex">
+                            <li>Eman</li>
+                            <li>Naser</li>
+                            <span class="moreText"> <li >Nora</li>
+                            <li >Saleh</li>
+                            <li >Abdullah</li></span>
+                        </ul>  
+                        <button class="readMore">More..</button>
+                    </li>
+                    </li>
+                    <li>Scratch (John)
+                        <ul class="te">
+                            <li>Nora</li>
+                            <li>Saleh</li>
+                            <span class="moreText"> <li> Abdulaziz</li>
+                            <li > Sadeem</li>
+                            <li > Jood</li></span>
+                        </ul>  
+                        <button class="readBtn">More..</button>
+                    </li>
+                    <li>Css (Jack)
+                        <ul>
+                            <li>Huda</li>
+                            <li>Sadeem</li>
+                        </ul>
+                    </li>
+                    <li>Swift (Emma)
+                        <ul>
+                            <li>Abdullah</li>
+                            <li>Lena</li>
+                        </ul>
+                    </li>
+                    <li>Snapl (mia)
+                        <ul>
+                            <li>Mohammed</li>
+                            <li>Jood</li>
+                        </ul>
+                    </li>
+                    <li>JavaScript (William)
+                        <ul>
+                            <li>Omar</li>
+                            <li>Amani</li>
+                            <li>Reem</li>
+                        </ul>
+                    </li>
+                    <Li>Java (Sarah)
+                        <ul>
+                            <li>Abdulaziz</li>
+                            <li>Raghad</li>
+                        </ul>
+                    </Li>
+                </ul>
+            </div>
+                     <script>
+                     // Display current week's date above the lists
+                      var currentWeekDateElement = document.getElementById('current-week-date');
+                       var currentDate = new Date();
+                       var startOfWeek = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay()));
+                       var endOfWeek = new Date(startOfWeek.getTime() + 6 * 24 * 60 * 60 * 1000);
+      
+                      var options = { weekday: 'long', day: 'numeric', month: 'numeric', year: 'numeric' };
+                       var currentWeekDateText =  startOfWeek.toLocaleDateString('en-US', options) + ' - ' + endOfWeek.toLocaleDateString('en-US', options);
+      
+                     currentWeekDateElement.textContent = 'Current Week: ' + currentWeekDateText;
+              
+                      // Show the rest of the course items when "More" link is clicked
+                      //b1
+                     const readMoreBtn = document.querySelector('.readMoreBtn');
+                     const text = document.querySelector('.text');
+
+                     readMoreBtn.addEventListener('click',(e)=>{
+                     text.classList.toggle('show-more');
+                      if(readMoreBtn.innerText === 'More..'){
+                       readMoreBtn.innerText = 'Less';}
+                     else{
+                      readMoreBtn.innerText = 'More..'; }
+                     })
+                     //b2
+                     const readMore = document.querySelector('.readMore');
+                     const tex = document.querySelector('.tex');
+
+                     readMore.addEventListener('click',(e)=>{
+                     tex.classList.toggle('show-more');
+                      if(readMore.innerText === 'More..'){
+                       readMore.innerText = 'Less';}
+                     else{
+                      readMore.innerText = 'More..'; }
+                     })
+                     //b3
+                     const readBtn = document.querySelector('.readBtn');
+                     const te = document.querySelector('.te');
+
+                     readBtn.addEventListener('click',(e)=>{
+                     te.classList.toggle('show-more');
+                      if(readBtn.innerText === 'More..'){
+                       readBtn.innerText = 'Less';}
+                     else{
+                      readBtn.innerText = 'More..'; }
+                     })
+                     
+
+
+                     </script>
+            <div class="Tutors-Courses">
+                <h3 class="Admin"><strong> Tutors-Courses</strong></h3>
+                <ul>
+                    <li><a class="Admin" href="schedule1.html">Alice</a><ul><li>Pythone</li></ul></li>
+                    <li><a class="Admin" href="schedule2.html">Bob</a><ul><li>Html</li></ul></li>
+                    <li>John<ul><li>Scratch</li></ul></li>
+                    <li>Jack<ul><li>Css</li></ul></li>
+                    <li>Emma<ul><li>Swift</li></ul></li>
+                    <li>Mia<ul><li>Snap</li></ul></li>
+                    <li>William<ul><li>JavaScript</li></ul></li>
+                    <li>Sarah<ul><li>Java</li></ul></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+    </main>
+
+<!-- Footer -->
+<footer>
+    <div id="footer">
+        <div class="footer-sections">
+            <div id="fot1">
+                <h3>About</h3>
+                <a href="">About ByteBuddy</a><br>
+                <a href="">Contact Us</a><br>
+                <a href="">FAQ</a>
+            </div>
+            <div id="fot2">
+                <h3>Support</h3>
+                <a href="">Terms of Use</a><br>
+                <a href="">Privacy Policy</a>
+            </div>
+        </div>
+        <div id="fot3">
+            <h3>Contact Us</h3>
+            <p>  
+                <a href=""><img src="images/whatsapp.png" alt="whatsapp"></a>
+                <a href=""><img src="images/twitter.png" alt="twitter"></a>
+                <a href=""><img src="images/instagram.png" alt="instagram"></a>
+                <br> © 2023 ByteBuddy Academy
+            </p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

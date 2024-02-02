@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="abc.css">
+    <link rel="stylesheet" href="theme.css">
+    <title>Parents dashboard</title>
+    <script src="byte.js"></script>
+    <script src="changeTheme.js"></script>
+</head>
+<body onload="onload()" >
+    <header >
+        
+        <div class="navbar">
+            <div class="logo"> 
+                <div class="logodiv">
+                <a href="#" class="logo_img"><img src="images/logo2.png" alt="logo"> </a>
+                 <a href="#" class="logo_text"><h2>ByteBuddy Academy</h2>
+                 <h5>Code, Create, Play, Repeat!</h5></a>
+                 </div>
+            </div>
+            
+                <ul class="top-nav-bar" > 
+                    <li  > <a href="courses.html" class="nav-item" >Courses</a> </li>
+                    <li  > <a href="parents.html" class="nav-item" >Parent</a> </li>
+                    <li  > <a href="Tutors.html" class="nav-item" >Tutors</a> </li>
+                    <li  > <a href="Adminstrator.html" class="nav-item" >Administrator</a> </li>
+                  
+                </ul>
+                <form action="#" class="search_fr">
+                   <input type="text" placeholder="Search..">
+                </form>
+                
+        </div>
+    </header>
+    <div class="breadcrumb">
+		<a href="index.html">Home</a>
+		<span class="separator"> > </span>
+		<a href="parents.html">Parents</a>
+	</div> 
+          <main>
+        <h1>Parent dashboard</h1>
+        <article class="k">
+            <h2>My Kids</h2>
+            <hr>
+            <ul class="mykids">
+                <li class="kid">
+                    <img src="images/boy1.png" alt="boy pic">
+                    <h5>Ali</h5>
+                    <p>9 years old boy wants to learn Python.</p>
+                    
+                </li>
+                <li class="kid">
+                    <img src="images/girl.png" alt="parent pic">
+                    <h5>Noura</h5>
+                    <p>10 years old girl wants to learn Scratch.</p>
+                    
+                </li>
+                <li class="kid">
+                    <img src="images/boy2.png" alt="boy pic">
+                    <h5>Ahmed</h5>
+                    <p>7 years old boy wants to learn Scratch.</p>
+                  
+                </li>
+                
+            </ul>
+        </article>
+        <div class="parents">
+            <div class="parent"> 
+                <img src="images/register-icon.png" alt="register icon">
+                <a href="Register.html" class="buttonp">Register a New Child</a>
+                
+            </div>
+          
+            <div class="parent"> 
+                <img src="images/evaluation-icon.png" alt="evaluation icon">
+                <a href="Evaluation.html" class="buttonp">Evaluate a Class</a>             
+                
+            </div>
+            <div class="parent"> 
+                <img src="images/enrollment-icon.png" alt="enrollment icon">
+                <a href="enrollment.html" class="buttonp">Enroll in a Class</a>
+                
+            </div>
+                </div>
+    </main>
+    <footer>
+        <div id="footer">
+            <div class="footer-sections">
+                <div id="fot1">
+                    <h3>About</h3>
+                    <a href="">About ByteBuddy</a><br>
+                    <a href="">Contact Us</a><br>
+                    <a href="">FAQ</a>
+                </div>
+                <div id="fot2">
+                    <h3>Support</h3>
+                    <a href="">Terms of Use</a><br>
+                    <a href="">Privacy Policy</a>
+                </div>
+            </div>
+            <div id="fot3">
+                <h3>Contact Us</h3>
+                <p>  
+                    <a href=""><img src="images/whatsapp.png" alt="whatsapp"></a>
+                    <a href=""><img src="images/twitter.png" alt="twitter"></a>
+                    <a href=""><img src="images/instagram.png" alt="instagram"></a>
+                    <br> © 2023 ByteBuddy Academy
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    // Function to display children on the dashboard
+    function displayChildren(children) {
+        var kidsList = document.querySelector('.mykids');
+        kidsList.innerHTML = '';
+
+        children.forEach(function(child) {
+            var childItem = document.createElement('li');
+            childItem.classList.add('kid');
+            childItem.innerHTML = `
+                <img src="images/boy1.png" alt="boy pic">
+                <h5>${child}</h5>
+                <p>${getAgeDescription()} wants to learn ${getSubject()}</p>
+            `;
+            kidsList.appendChild(childItem);
+        });
+    }
+
+    // Function to generate a random age description
+    function getAgeDescription() {
+        var ageDescriptions = ['9 years old boy', '10 years old girl', '7 years old boy']; 
+        return ageDescriptions[Math.floor(Math.random() * ageDescriptions.length)];
+    }
+
+    // Function to generate a random subject
+    function getSubject() {
+        var subjects = ['Python', 'Scratch']; 
+        return subjects[Math.floor(Math.random() * subjects.length)];
+    }
+
+    // Retrieve parent's children from local storage
+    var parentChildren = localStorage.getItem('parentChildren');
+
+    // If no children are stored or if it's empty, save default names
+    if (!parentChildren || JSON.parse(parentChildren).length === 0) {
+        var defaultChildren = ['Ali', 'Noura']; 
+        localStorage.setItem('parentChildren', JSON.stringify(defaultChildren));
+        displayChildren(defaultChildren);
+    } else {
+        // Retrieve children's names from local storage and display them
+        var storedChildren = JSON.parse(parentChildren);
+        displayChildren(storedChildren);
+    }
+});
+
+    </script>
+      
+</body>
+</html>
+
+
+

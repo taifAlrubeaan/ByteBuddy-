@@ -1,0 +1,145 @@
+/*darkmode*/
+.dark-mode {
+    background-image: url("images/darkbg.jpeg");
+  color:whitesmoke
+  }
+
+  .dark-mode .navbar {
+
+    background: #031c2f;
+}
+
+.dark-mode li a {
+  
+    color: rgb(255, 255, 255);
+  }
+
+.dark-mode .course {
+  
+    background-color: rgb(31, 37, 103);
+    box-shadow: 0 0 15px rgb(6, 1, 53);
+}
+
+.dark-mode .breadcrumb {
+   
+    background-color: #031c2f;
+   
+	border: 1px solid #BDBBBB;
+    border-top: 1px solid #BDBBBB;
+    border-bottom: 1px solid #BDBBBB;
+    
+}
+
+
+.dark-mode .user-review{
+   
+    background: #052a46;
+}
+
+
+.dark-mode footer { 
+   
+    background-color:#173a55; 
+  }
+
+
+  .dark-mode .vision{
+   
+   background:  rgba(16, 79, 127, 0.6);
+  
+}
+
+.dark-mode #themeButton {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .dark-mode #themeButton:hover {
+    background-color: #555;
+  }
+
+  .dark-mode footer a {
+    color:lightgrey;
+  }
+  .dark-mode .breadcrumb a {
+    color:lightgrey;
+  }
+  .dark-mode .teacherbox {
+  
+    background-color: #173a55;
+    box-shadow: 0 0 15px rgb(6, 1, 53);
+}
+.dark-mode fieldset{
+  background-color: #173a55;
+    box-shadow: 0 0 15px rgb(6, 1, 53); 
+}
+.dark-mode .mykids {
+  background-color: #173a55;
+    box-shadow: 0 0 15px rgb(6, 1, 53); 
+
+}
+.dark-mode .parent{
+  background-color: #031c2f;
+    box-shadow: 0 0 15px rgb(6, 1, 53); 
+}
+.dark-mode .k{
+  background-color: #173a55;
+  box-shadow: 0 0 15px rgb(6, 1, 53); 
+}
+
+.dark-mode .parents{
+  background-color: #173a55;
+    box-shadow: 0 0 15px rgb(6, 1, 53); 
+}
+.dark-mode .kid{
+  background-color: #031c2f;
+    box-shadow: 0 0 15px rgb(6, 1, 53); 
+}
+
+.dark-mode .cinfo{
+  background-color: #031c2f;;
+  box-shadow: 0 0 15px rgb(6, 1, 53); 
+}
+.dark-mode .course-details{
+  background-color: #173a55;
+  box-shadow: 0 0 15px rgb(6, 1, 53); 
+}
+.dark-mode .schedule{
+  color:  #031c2f;;  
+}
+.dark-mode th{
+  background-color:  #031c2f;;
+ color: white;
+}
+.dark-mode td{
+  background-color: rgb(16, 79, 127);
+  color: white;
+}
+.dark-mode tbody td.c{
+  background-color: rgb(16, 79, 127); 
+  color: white;
+}
+.dark-mode caption{
+color: white;
+}
+.dark-mode .student{
+  background-color: rgb(16, 79, 127);  
+}
+.dark-mode .Courses-Student{
+  background-color: rgb(16, 79, 127);  
+}
+ .dark-mode .Tutors-Courses{
+  background-color: rgb(16, 79, 127);  
+}
+.dark-mode .intro-box{
+  background-color: rgb(16, 79, 127);  
+}
+ .dark-mode .step1-box{
+  background-color: rgb(16, 79, 127);  
+}
+.dark-mode .step2-box{
+  background-color: rgb(16, 79, 127);  
+}
+.dark-mode .intro{
+  background-color: #173a55;  
+}

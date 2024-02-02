@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="abc.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="byte.js"></script>
+    <script src="changeTheme.js"></script>
+    <script>
+      
+        // Multidimensional array for courses
+        var coursesData = [
+            { name: "Python", tutor: "Alice", prerequisite: "Java" },
+            { name: "CSS", tutor: "Jack", prerequisite: "HTML" },
+            { name: "JavaScript", tutor: "Mia", prerequisite: "HTML" },
+            { name: "HTML", tutor: "Bob", prerequisite: "None" },
+            { name: "Swift", tutor: "Emma", prerequisite: "Python" },
+            { name: "Java", tutor: "William", prerequisite: "None" },
+            { name: "Scratch", tutor: "John", prerequisite: "None" },
+            { name: "Snap", tutor: "Sarah", prerequisite: "Scratch" },
+            { name: "C-Sharp", tutor: "William", prerequisite: "Java" }
+        ];
+
+        // Function to fill filter options
+        function fillFilterOptions() {
+            var tutorsSet = new Set();
+            var prerequisitesSet = new Set();
+
+            // Clear previous options
+            document.getElementById("courseTutor").innerHTML = '<option value="" disabled selected>-Tutor-</option>';
+            document.getElementById("coursePrerequisite").innerHTML = '<option value="" disabled selected>-Prerequisite-</option>';
+
+            // Fill options from the array
+            coursesData.forEach(course => {
+                tutorsSet.add(course.tutor);
+                prerequisitesSet.add(course.prerequisite);
+            });
+
+            // Add options to the filter selects
+            tutorsSet.forEach(tutor => {
+                document.getElementById("courseTutor").innerHTML += '<option value="' + tutor + '">' + tutor + '</option>';
+            });
+
+            prerequisitesSet.forEach(prerequisite => {
+                document.getElementById("coursePrerequisite").innerHTML += '<option value="' + prerequisite + '">' + prerequisite + '</option>';
+            });
+        }
+
+        // Function to get the tutor of a course
+        function getTutor(courseName) {
+            var course = coursesData.find(course => course.name === courseName);
+            return course ? course.tutor : "Unknown";
+        }
+
+        // Function to reset the form and displayed information
+		function resetForm() {
+    		// Clear the form
+    		document.getElementById("enrollmentForm").reset();
+
+    		// Clear the displayed information
+   			 var displayDiv = document.getElementById("enrollmentInfo");
+    		displayDiv.innerHTML = "";
+
+    		// Reinitialize course choices with all courses
+    		updateCourseChoices([]);
+		}
+
+       	// Function to filter courses based on selected tutor and prerequisite
+		function filterCourses() {
+    		var selectedTutor = document.getElementById("courseTutor").value;
+   			 var selectedPrerequisite = document.getElementById("coursePrerequisite").value;
+
+    	// Check for specific prerequisite courses when selected only from Prerequisite dropdown
+    	if (selectedTutor === "" && specificPrerequisites.includes(selectedPrerequisite)) {
+        	displaySpecificPrerequisiteMessage();
+        	return;
+    	}
+
+    // Check for 2 options selected from both tutors and prerequisite dropdown
+    if (selectedTutor !== "" && selectedPrerequisite !== "") {
+        var matchingCourse = findMatchingCourse(selectedTutor, selectedPrerequisite);
+        if (matchingCourse) {
+            updateCourseChoices([matchingCourse]);
+            return;
+        } else {
+            displayNoCoursesMessage();
+            return;
+        }
+    }
+
+    // Filter courses based on selected tutor and prerequisite
+    var filteredCourses = coursesData.filter(function (course) {
+        return (
+            (selectedTutor === "" || course.tutor === selectedTutor) &&
+            (selectedPrerequisite === "" || course.prerequisite === selectedPrerequisite)
+        );
+    });
+
+    // Update the course choices section with filtered courses
+    updateCourseChoices(filteredCourses);
+}
+
+// Array for specific prerequisite courses
+var specificPrerequisites = ["CSS", "JavaScript", "Swift", "Snap", "C-Sharp"];
+
+// Function to find a matching course based on selected tutor and prerequisite
+function findMatchingCourse(selectedTutor, selectedPrerequisite) {
+    var matchingCourse = null;
+
+    // Define matching conditions
+    var conditions = [
+        { tutor: "Alice", prerequisite: "Java", courseName: "Python" },
+        { tutor: "Jack", prerequisite: "HTML", courseName: "CSS" },
+        { tutor: "Mia", prerequisite: "HTML", courseName: "JavaScript" },
+        { tutor: "Bob", prerequisite: "None", courseName: "HTML" },
+        { tutor: "Emma", prerequisite: "Python", courseName: "Swift" },
+        { tutor: "William", prerequisite: "None", courseName: "Java" },
+        { tutor: "John", prerequisite: "None", courseName: "Scratch" },
+        { tutor: "Sarah", prerequisite: "Scratch", courseName: "Snap" },
+        { tutor: "William", prerequisite: "Java", courseName: "C-Sharp" }
+    ];
+
+    // Find a matching course based on conditions
+    conditions.forEach(function (condition) {
+        if (condition.tutor === selectedTutor && condition.prerequisite === selectedPrerequisite) {
+            matchingCourse = coursesData.find(function (course) {
+                return course.name === condition.courseName;
+            });
+        }
+    });
+
+    return matchingCourse;
+}
+
+// Function to display the message when specific prerequisite courses are selected
+function displaySpecificPrerequisiteMessage() {
+    var courseChoices = document.querySelector(".course-choices");
+    courseChoices.innerHTML = "This course is not a prerequisite to another course.";
+}
+
+// Function to display the message when no courses are available for the selected prerequisite and tutor
+function displayNoCoursesMessage() {
+    var courseChoices = document.querySelector(".course-choices");
+    courseChoices.innerHTML = "No courses are offered for the selected prerequisite and tutor.";
+}
+
+// Function to update the course choices section
+function updateCourseChoices(filteredCourses) {
+    var courseChoices = document.querySelector(".course-choices");
+    courseChoices.innerHTML = ""; // Clear existing content
+
+    // Get courses to display based on filters
+    var coursesToDisplay = filteredCourses.length > 0 ? filteredCourses : coursesData;
+
+    // Check if the selected course is in the specified list
+    var specificCourses = ["CSS", "JavaScript", "Swift", "Snap", "C-Sharp"];
+    if (specificCourses.includes(document.getElementById("coursePrerequisite").value)) {
+        courseChoices.innerHTML = "This course is not a prerequisite to another course.";
+        return;
+    }
+
+    // Add checkboxes for courses
+    coursesToDisplay.forEach(function (course) {
+        var checkbox = document.createElement("div");
+        checkbox.className = "course-choice";
+        checkbox.innerHTML = `
+            <input type="checkbox" id="${course.name}" name="course_type" value="${course.name}">
+            <img src="images/${course.name.toLowerCase()}.jpg" alt="${course.name} Logo" width="50" height="50">
+            <label for="${course.name}">${course.name}</label>
+        `;
+        courseChoices.appendChild(checkbox);
+    });
+}
+
+// Initialize course choices with all courses on page load
+document.addEventListener("DOMContentLoaded", function () {
+    updateCourseChoices([]);
+});
+
+// Function to handle form submission
+function submitForm() {
+    // Retrieve selected child and course
+    var selectedChild = document.getElementById("childName").value;
+    var selectedCourses = document.querySelectorAll('input[name="course_type"]:checked');
+
+    // Check if a child is selected
+    if (!selectedChild) {
+        alert("Please select a child.");
+        return;
+    }
+
+    // Check if at least one course is selected
+    if (selectedCourses.length === 0) {
+        alert("Please select at least one course.");
+        return;
+    }
+
+    // Display information
+    var displayDiv = document.getElementById("enrollmentInfo");
+
+    // Remove previous information
+    displayDiv.innerHTML = "";
+
+    // Display selected child
+    displayDiv.innerHTML += "<strong>Selected Child: </strong>" + selectedChild + "<br>";
+
+    // Display selected courses and their tutors
+    if (selectedCourses.length > 0) {
+        displayDiv.innerHTML += "<strong>Selected Courses: </strong><br>";
+        selectedCourses.forEach(function (course) {
+            displayDiv.innerHTML += `- Course: ${course.value} <br>`;
+            displayDiv.innerHTML += `Tutor: ${getTutor(course.value)} <br>`;
+        });
+    }
+
+    // Reset the form
+    document.getElementById("enrollmentForm").reset();
+
+    // Reset courses to default
+    updateCourseChoices([]);
+}
+            function getStoredChildNames() {
+                var storedChildNames = localStorage.getItem('childNames');
+                return storedChildNames ? JSON.parse(storedChildNames) : [];
+            }
+            
+            function populateSelectWithChildNames(selectId) {
+    // Retrieve default child names from the parent dashboard
+    var parentChildren = localStorage.getItem('parentChildren');
+    var defaultChildren = parentChildren ? JSON.parse(parentChildren) : [];
+
+    var childrenSelect = document.getElementById(selectId);
+
+    if (defaultChildren.length > 0) {
+        defaultChildren.forEach(function (name) {
+            var option = document.createElement("option");
+            option.value = name;
+            option.textContent = name;
+            childrenSelect.appendChild(option);
+        });
+    }
+}
+
+            
+            // Usage: Call the function with the ID of the target select element
+            document.addEventListener("DOMContentLoaded", function() {
+                populateSelectWithChildNames("childName");
+            });
+    </script>
+
+    <style>
+        input[type="button"]:hover {
+            background-color: #00B499;
+        }
+    </style>
+</head>
+
+<body onload="onload()">
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo"> 
+                <div class="logodiv">
+                    <a href="#" class="logo_img"><img src="images/logo2.png" alt="logo"></a>
+                    <a href="#" class="logo_text">
+                        <h2>ByteBuddy Academy</h2>
+                        <h5>Code, Create, Play, Repeat!</h5>
+                    </a>
+                </div>
+            </div>
+            <ul class="top-nav-bar">
+                <li><a href="courses.html" class="nav-item">Courses</a></li>
+                <li><a href="parents.html" class="nav-item"><strong>Parents</strong></a></li>
+                <li><a href="Tutors.html" class="nav-item">Tutors</a></li>
+                <li><a href="Adminstrator.html" class="nav-item">Administrator</a></li>
+            </ul>
+
+            <form action="#" class="search_fr">
+                <input type="text" placeholder="Search..">
+            </form>   
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator"> > </span>
+        <a href="parents.html">Parents</a>
+        <span class="separator"> > </span>
+        <a href="enrollment.html">Course Enrollment</a>
+    </div>
+
+    <!-- Main -->
+    <main>
+        <h1>Course Enrollment Form</h1>
+        <hr> <br>
+
+        <article>
+            <div class="intro-box">
+                <h3>Embark on a new learning journey!</h3>
+                <p>Discover the magic of coding at ByteBuddy Academy, where young minds ignite their creativity. Our courses make learning fun and accessible, shaping future innovators. Join us on this exciting journey and unlock a world of possibilities. </p>
+                <p style="color: #00B499"> Start coding, start creating, and start shaping the future! 🚀🌟</p>
+            </div>
+            <br>
+
+            <!-- Course Enrollment Form -->
+            <form id="enrollmentForm">
+                <div class="enrollment-form">
+                    <!-- Step One: Choose Your Child -->
+                    <div class="step1-box">
+                        <div class="step1">
+                            <h3>Step One: Choose Your Child</h3>
+                            <hr><br>
+                            <label for="childName">Student Name:</label>
+                            <select id="childName" class="enrollment-select">
+                                <option value="" disabled selected>-Select-</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+
+                    <!-- Step Two: Choose the Course -->
+                    <div class="step2-box">
+                        <div class="step2">
+                            <h3>Step Two: Choose the Course</h3>
+                            <hr><br>
+                            <div class="filter-options">
+                                Filter by:
+                                <select id="coursePrerequisite" class="enrollment-select" onchange="filterCourses()">
+                                    <option value="" disabled selected>-Prerequisite-</option>
+						<optgroup label="Web Development">
+							<option value="HTML">HTML</option>
+							<option value="CSS">CSS</option>
+							<option value="JavaScript">JavaScript</option>
+						</optgroup>
+						<optgroup label="Object Oriented Programming">
+							<option value="Java">Java</option>
+							<option value="Python">Python</option>
+							<option value="C-Sharp">C-Sharp</option>
+							<option value="Swift">Swift</option>
+						</optgroup>
+						<optgroup label="Code Blocks">
+							<option value="Scratch">Scratch</option>
+							<option value="Snap">Snap</option>
+						</optgroup>
+						<optgroup label="No Prerequisite">
+							<option value="None">None</option>
+						</optgroup>
+                                </select>
+
+                                <select id="courseTutor" class="enrollment-select" onchange="filterCourses()">
+                                    <option value="" disabled selected>-Tutor-</option>
+						<optgroup label="Programming Tutors">
+							<option value="Alice">Alice</option>
+							<option value="Emma">Emma</option>
+							<option value="William">William</option>
+						</optgroup>
+						<optgroup label="Web Design Tutors">
+							<option value="Bob">Bob</option>
+							<option value="Jack">Jack</option>
+							<option value="Mia">Mia</option>
+						</optgroup>
+						<optgroup label="Other Tutors">
+							<option value="John">John</option>
+							<option value="Sarah">Sarah</option>
+						</optgroup>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="course-choices">
+                                <!-- Course choices will be dynamically updated here based on the filter -->
+                            </div>
+                        </div>
+                    
+                    <div id="enrollmentInfoContainer">
+                        <div id="enrollmentInfo"></div>
+                    </div>
+
+                    <br>
+
+                    <div class="button-enrollment">
+                        <input type="button" value="Submit" onclick="submitForm()">
+                        <input type="reset" value="Reset" onclick="resetForm();">
+                    </div>
+                    </div>
+
+                </div>
+            </form>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div id="footer">
+            <div class="footer-sections">
+            <div id="fot1">
+                <h3>About</h3>
+                <a href="">About ByteBuddy</a><br>
+                <a href="">Contact Us</a><br>
+                <a href="">FAQ</a>
+            </div>
+            <div id="fot2">
+                <h3>Support</h3>
+                <a href="">Terms of Use</a><br>
+                <a href="">Privacy Policy</a>
+            </div>
+        </div>
+        <div id="fot3">
+            <h3>Contact Us</h3>
+            <p>  
+                <a href=""><img src="images/whatsapp.png" alt="whatsapp"></a>
+                <a href=""><img src="images/twitter.png" alt="twitter"></a>
+                <a href=""><img src="images/instagram.png" alt="instagram"></a>
+                <br> © 2023 ByteBuddy Academy
+            </p>
+        </div>
+        </div>
+    </footer>
+</body>
+
+</html>

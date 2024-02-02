@@ -1,0 +1,701 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url("images/backgroundw.jpg");
+    background-size: cover;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    background: #e5f1fa;
+}
+
+.page-container {
+    width: 95%;
+    margin: auto;
+}
+
+.navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.dark-mode header {
+    background: #031c2f;
+}
+.top-nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+li a {
+    font-size: larger;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+li a:hover {
+    color: #00a693;
+    opacity: 1;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.logodiv {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 100%;
+}
+
+a.logo_img {
+    width: 112px;
+    display: block;
+    padding: 5px;
+}
+#themeButton {
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #00a693;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 6px;
+   
+  
+  }
+  
+  #themeButton:hover {
+    background-color: #007e67;
+  }
+.logo h5,
+h2 {
+    padding: 5px 0;
+}
+
+.logo_text {
+    text-decoration: none;
+    float: left;
+    color: inherit;
+}
+.search_fr {
+    text-align: center;
+    padding: 5px 0px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+}
+.search_fr input {
+    padding: 5px;
+}
+
+.search_fr input[type="text"] {
+    background-image: url("images/search.jpg");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 30px;
+}
+
+.breadcrumb {
+    margin-top: -1px;
+    width: 100%;
+    background-color: #e5f1fa;
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid #bdbbbb;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+    color: #0077cc;
+}
+
+.breadcrumb .separator {
+    margin: 0 5px;
+    color: #333;
+}
+
+main {
+    padding-top: 130px;
+}
+
+.courses {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 50px;
+    padding: 50px 0px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.course {
+    width: 400px;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: white;
+    text-align: center;
+    -webkit-box-shadow: 0 0 15px lightgray;
+    box-shadow: 0 0 15px lightgray;
+}
+
+.course img {
+    width: 100%;
+    height: 135px;
+    background-color: #ffffff;
+}
+
+.checked {
+    color: orange;
+}
+
+.course h3 {
+    padding: 15px 0;
+}
+
+.course p {
+    padding-bottom: 15px;
+}
+
+.vision {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 70px;
+    height: 70vh;
+    background: rgba(229, 241, 250, 0.6);
+}
+
+.d {
+    width: 100%;
+}
+
+.visionimg img {
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 86%;
+    height: 300px;
+    -webkit-box-shadow: 0px 35px 77px -17px rgba(0, 0, 0, 0.44);
+    box-shadow: 0px 35px 77px -17px rgba(0, 0, 0, 0.44);
+    background-color: white;
+}
+
+.visionimg {
+    width: 50%;
+    text-align: right;
+}
+
+.visiontext {
+    width: 34%;
+    margin-left: 100px;
+    text-shadow: 0.2em 0.2em 0.3em silver;
+}
+
+.visiontext h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.visiontext p {
+    font-size: 24px;
+    text-align: justify;
+}
+
+.users {
+    width: 100%;
+    padding: 40px 0px;
+    gap: 50px;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.user-review {
+    width: 400px;
+    padding: 20px 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: left;
+    background: #f8e4ef;
+}
+
+.user-review img {
+    height: 100px;
+    width: 100px;
+}
+
+.user-review {
+    border: 1px solid gray;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.Admin {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.student,
+.Courses-Student,
+.Tutors-Courses {
+    width: 18%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #d3dbda;
+    -webkit-box-shadow: 0 0 15px lightgray;
+    box-shadow: 0 0 15px lightgray;
+    border: 4em;
+    margin: 0 10px;
+    border: 0.1em solid black;
+}
+
+li.user-review h5 {
+    padding-bottom: 10px;
+}
+
+li.user-review p {
+    padding-bottom: 10px;
+}
+
+.user-review p {
+    margin-top: 0px;
+    font-size: small;
+    text-align: left;
+}
+
+footer {
+    float: left;
+    font-family: Arial;
+    width: 100%;
+    background-color: #e5f1fa;
+    font-size: small;
+    line-height: 1.5;
+    padding: 20px 0;
+}
+
+.footer-sections {
+    padding-left: 40px;
+}
+
+#fot1,
+#fot2 {
+    width: 174px;
+    float: left;
+}
+
+#fot3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 80px;
+    float: right;
+    text-align: center;
+}
+
+#fot3 img {
+    width: 3vw;
+    height: 3vw;
+}
+
+#fot1 a,
+#fot2 a {
+    text-decoration: none;
+}
+
+#fot1 a:hover,
+#fot2 a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (min-height: 1000px) {
+    .vision {
+        height: 50vh;
+    }
+}
+@media only screen and (max-width: 1180px) {
+    .top-nav-bar {
+        gap: 15px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .logo {
+        font-size: 1.3vw;
+    }
+   
+
+    .top-nav-bar li a {
+        font-size: 1.7vw;
+    }
+
+    .visiontext {
+        width: 40%;
+        margin-left: 40px;
+    }
+
+    .visiontext p {
+        font-size: 20px;
+    }
+    
+}
+
+@media only screen and (max-width: 940px) {
+    .navbar {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .search_fr {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        margin-bottom: 10px;
+        justify-content: space-around;
+    }
+
+    .search_fr input {
+        width: 90%;
+        margin: auto;
+    }
+    .search_fr form {
+        width: 80%;
+    }
+    main {
+        padding-top: 168px;
+    }
+
+    .course {
+        width: 340px;
+    }
+
+    .courses {
+        gap: 25px;
+    }
+
+    .user-review {
+        width: 340px;
+    }
+
+    .users {
+        gap: 25px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .vision {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .courses {
+        gap: 20px;
+        row-gap: 30px;
+        width: 97%;
+        margin: auto;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+
+    .users {
+        gap: 20px;
+        row-gap: 30px;
+        width: 97%;
+        margin: auto;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+
+    .user-review {
+        width: 48%;
+    }
+
+    .course {
+        width: 48%;
+    }
+
+    .logodiv {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    a.logo_img {
+        width: 90px;
+        display: block;
+        padding: 5px 0px;
+    }
+
+    .top-nav-bar {
+        width: 100%;
+        padding: 0px;
+        font-size: 2.8vw;
+        margin: 0px;
+    }
+
+    .logo h2 {
+        font-size: 24px;
+        padding-left: 10px;
+    }
+    .pagetitle {
+        font-size: 8vw;
+    }
+    .logo h5 {
+        font-size: 14px;
+        padding-left: 10px;
+    }
+
+    .top-nav-bar li a {
+        font-size: 18px;
+    }
+
+    .top-nav-bar {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .search_fr {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0px 5px;
+    }
+
+    main {
+        padding-top: 203px;
+    }
+
+    .search_fr input {
+        padding: 1vw;
+    }
+
+    .vision {
+        height: unset;
+        padding-bottom: 40px;
+        padding-top: 0;
+    }
+
+    .visionimg {
+        width: 100%;
+    }
+
+    .visionimg img {
+        width: 100%;
+        margin-top: 0px;
+        height: 336px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .visiontext {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    .visiontext h2 {
+        font-size: 8vw;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .pagetitle {
+        font-size: 8vw;
+    }
+    .visiontext p {
+        font-size: 4vw;
+        padding-left: 0;
+        width: 95%;
+        margin: auto;
+    }
+
+    .course img {
+        height: 220px;
+    }
+
+    .user-review {
+        padding: 10px;
+        text-align: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .user-review p {
+        text-align: center;
+    }
+
+    div#fot1,
+    div#fot2 {
+        width: 43%;
+        text-align: center;
+    }
+
+    div#fot3 {
+        padding-right: 0px;
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .top-nav-bar {
+        gap: 5px;
+    }
+
+    .logo {
+        width: 100%;
+        font-size: 4.5vw;
+    }
+
+    .top-nav-bar {
+        width: 100%;
+        padding: 0px;
+        font-size: 4vw;
+        margin: 10px 0;
+        justify-content: space-between;
+    }
+
+    .search_fr {
+        width: 100%;
+        text-align: center;
+        padding: 5px 0px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .visionimg {
+        width: 100%;
+    }
+
+    .visionimg img {
+        width: 100%;
+        margin-top: 0px;
+        height: 210px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .visiontext {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    .visiontext h2 {
+        font-size: 8vw;
+        text-align: center;
+    }
+
+    .visiontext p {
+        font-size: 5vw;
+        padding-left: 5px;
+        width: 95%;
+    }
+
+    .course {
+        width: 90%;
+        font-size: 4vw;
+    }
+    .pagetitle {
+        font-size: 8vw;
+    }
+    .user-review {
+        width: 90%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .user-review p {
+        text-align: center;
+    }
+
+    div#fot1,
+    div#fot2 {
+        width: 43%;
+        text-align: center;
+    }
+
+    div#fot3 {
+        padding-right: 0px;
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .top-nav-bar li a {
+        font-size: 16px;
+    }
+}

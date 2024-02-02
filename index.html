@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="theme.css">
+    <!-- The CSS File Is Only For index.html -->
+    <link rel="stylesheet" href="index-responsive.css" type="text/css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body onload="onload()"></body>
+
+    <!-- Header -->
+    <header>
+        <div class="page-container">
+            <div class="navbar">
+                <div class="logo">
+                    <div class="logodiv">
+                        <a href="#" class="logo_img"><img src="images/logo2.png" alt="logo" /></a>
+                        <a href="#" class="logo_text">
+                            <h2>ByteBuddy Academy</h2>
+                            <h5>Code, Create, Play, Repeat!</h5>
+                        </a>
+                    </div>
+                </div>
+                <ul class="top-nav-bar">
+                    <li><a href="courses.html" class="nav-item">Courses</a></li>
+                    <li><a href="parents.html" class="nav-item">Parents</a></li>
+                    <li><a href="Tutors.html" class="nav-item">Tutors</a></li>
+                    <li>
+                        <a href="Adminstrator.html" class="nav-item">Administrator</a>
+                    </li>
+                </ul>
+
+                <div class="search_fr">
+                    <form action="#">
+                        <input type="text" placeholder="Search.." />
+                    </form>
+                    <button type="button" id="themeButton" onclick="darkmode()">Dark mode</button>
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <div class="page-container">
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1 class="pagetitle">Home page</h1>
+        <article class="vision">
+            <div class="visionimg">
+                <img src="images/vision.gif" alt="vision" />
+            </div>
+
+            <div class="visiontext">
+                <h2>Vision</h2>
+                <p>
+                    Our vision at ByteBuddy Academy is to empower children with the
+                    essential programming skills and knowledge, nurturing their
+                    curiosity and passion for technology. We aspire to be the leading
+                    online platform that serves as a dedicated assistant, guiding young
+                    learners and their parents in the exciting journey of programming
+                    education.
+                </p>
+            </div>
+        </article>
+        <article>
+            <div class="courses">
+                <div class="course">
+                    <div>
+                        <img src="images/python.gif" alt="html logo" />
+                        <h3>Python</h3>
+                        <p>Versatile and readable programming language.</p>
+                    </div>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                </div>
+                <div class="course">
+                    <div>
+                        <img src="images/html.png" alt="html logo" />
+                        <h3>HTML</h3>
+                        <p>Standard markup language for web pages.</p>
+                    </div>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+                <div class="course">
+                    <div>
+                        <img src="images/scratch.gif" alt="html logo" />
+                        <h3>Scratch</h3>
+                        <p>
+                            Visual programming language for creating interactive projects.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                </div>
+                <div class="course">
+                    <div>
+                        <img src="images/css.gif" alt="html logo" />
+                        <h3>CSS</h3>
+                        <p>A powerful styling language in web development.</p>
+                    </div>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                </div>
+
+                <div class="course">
+                    <div>
+                        <img src="images/swift.png" alt="html logo" />
+                        <h3>Swift</h3>
+                        <p>Efficient language for Apple app development.</p>
+                    </div>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+                <div class="course">
+                    <div>
+                        <img src="images/snap.jpeg" alt="html logo" />
+                        <h3>Snap!</h3>
+                        <p>Visual programming for animations and games.</p>
+                    </div>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+                <div class="course">
+                    <div>
+                        <img src="images/js.gif" alt="html logo" />
+                        <h3>JavaScript</h3>
+                        <p>Dynamic language for web interactivity.</p>
+                    </div>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                </div>
+                <div class="course">
+                    <div>
+                        <img src="images/java.gif" alt="html logo" />
+                        <h3>Java</h3>
+                        <p>Platform-independent programming language.</p>
+                    </div>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <hr />
+
+        <article class="d">
+            <ul class="users">
+                <li class="user-review">
+                    <div>
+                        <img src="images/user1.png" alt="parent pic" />
+                    </div>
+                    <div>
+                        <h5>Noura</h5>
+                        <p>
+                            My child's programming skills have improved significantly since
+                            joining ByteBuddy Academy.
+                        </p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </li>
+                <li class="user-review">
+                    <div>
+                        <img src="images/user2.png" alt="parent pic" />
+                    </div>
+                    <div>
+                        <h5>Ali</h5>
+                        <p>
+                            Top-notch tutors, standout courses. ByteBuddy Academy is a
+                            programming paradise.
+                        </p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </li>
+                <li class="user-review">
+                    <div>
+                        <img src="images/user3.png" alt="parent pic" />
+                    </div>
+                    <div>
+                        <h5>Dana</h5>
+                        <p>
+                            The Academy provides a fun and engaging learning experience for
+                            young programmers.
+                        </p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                </li>
+                <li class="user-review">
+                    <div>
+                        <img src="images/user4.png" alt="parent pic" />
+                    </div>
+                    <div>
+                        <h5>Sarah</h5>
+                        <p>
+                            Expert tutors, engaging courses. ByteBuddy Academy is a standout
+                            for young learners.
+                        </p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </li>
+            </ul>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div id="footer">
+            <div class="footer-sections">
+                <div id="fot1">
+                    <h3>About</h3>
+                    <a href="">About ByteBuddy</a><br />
+                    <a href="">Contact Us</a><br />
+                    <a href="">FAQ</a>
+                </div>
+                <div id="fot2">
+                    <h3>Support</h3>
+                    <a href="">Terms of Use</a><br />
+                    <a href="">Privacy Policy</a>
+                </div>
+            </div>
+            <div id="fot3">
+                <h3>Contact Us</h3>
+                <p>
+                    <a href=""><img src="images/whatsapp.png" alt="whatsapp" /></a>
+                    <a href=""><img src="images/twitter.png" alt="twitter" /></a>
+                    <a href=""><img src="images/instagram.png" alt="instagram" /></a>
+                    <br />
+                    © 2023 ByteBuddy Academy
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="changeTheme.js"></script>
+</body>
+
+</html>

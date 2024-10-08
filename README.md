@@ -58,7 +58,7 @@ Installation and Setup
 --------------------------
 
 1. Clone the repository:
-     git clone https://github.com/your-username/ByteBuddyAcademy.git
+     git clone https:https://github.com/taifAlrubeaan/ByteBuddy-.git
    
 2. Navigate to the project directory:
      cd ByteBuddyAcademy

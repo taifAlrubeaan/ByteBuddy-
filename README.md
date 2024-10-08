@@ -75,10 +75,10 @@ Installation and Setup
 - Taif Alrubeaan (ID: 442202301)
   
 - Alanoud Alarifi (ID: 442201803)
-- 
+  
 - Basma Alsulaim (ID: 441200595)
-- 
+  
 - Raghad Alboqami (ID: 442200455)
-- 
+  
 - Marya Asaad (ID: 443200794)
 
